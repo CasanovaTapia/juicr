@@ -1,5 +1,23 @@
-.headline.jumbotron.text-center
+.intro-headline.text-center
   .container.front-head
-    %h1.brand Juicr
-    %h3.brand-small ask. give. create.
-    %p.lead Join a project, or find colleagues to help with yours
+    %h1.brand.text-shadow Juicr
+    %h3.brand-small.text-shadow ask. give. create.
+    %h2.text-shadow Join a project, or find friends to help with yours
+    = link_to "Sign up", "#", class: 'btn btn-primary btn-lg'
+    = link_to "Log in", "#", class: 'btn btn-primary btn-lg'
+.container.front-icons.text-center
+  .row
+    .col-md-4
+      %span.glyphicon.glyphicon-leaf
+      %h3 We're cool
+      %p Etiam ultrices in neque sit amet vulputate. Curabitur ut porttitor ex, at vehicula est. Nunc vestibulum quis erat ut maximus. Fusce arcu nunc, porttitor vel orci sed, dictum vulputate nulla. Etiam dolor tellus, gravida eget arcu pharetra, euismod suscipit orci. Praesent vitae convallis ipsum, id laoreet lectus.
+    .col-md-4
+      %span.glyphicon.glyphicon-heart
+      %h3 You're cool
+      %p Praesent massa libero, dignissim id ante eget, vehicula faucibus nibh. Vivamus lorem nisi, convallis a enim et, molestie congue dui. Curabitur ut porttitor ex, at vehicula est. Nunc vestibulum quis erat ut maximus. Duis dui arcu, efficitur sed hendrerit non, imperdiet eget orci.
+    .col-md-4
+      %span.glyphicon.glyphicon-eye-open
+      %h3 Let's work together
+      %p Mauris vestibulum aliquet accumsan. Mauris non tempus arcu. Ut vestibulum eu magna eu viverra. Morbi ex tortor, blandit venenatis orci eget, fringilla convallis tortor. Mauris congue elit metus, a consequat augue mollis at. Morbi id maximus arcu. Integer elit ipsum, aliquam at erat sit amet, laoreet placerat orci.
+.container.text-center
+  %h1.brand-small Now start creating!

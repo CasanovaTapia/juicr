@@ -15,14 +15,17 @@ p {
 .brand {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #1abc9c;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  color: #fff;
 }
 
 .brand-small {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   color: #1abc9c;
+}
+
+.text-shadow {
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 a, a:hover, a:visited, a:link, a:active {
@@ -33,17 +36,39 @@ a, a:hover, a:visited, a:link, a:active {
   background-color: #1abc9c;
 }
 
-.headline {
+.btn {
+  margin-top: 20px;
+  border: none;
+  width: 6em;
+}
+
+.btn-primary {
+  background-color: #fff;
+}
+
+// Home Page
+.intro-headline {
   margin-top: -20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: #555;
+  background-size: cover;
   color: #fff;
   width: 100%;
-  min-height: 350px;
+  min-height: 180px;
+}
+
+.glyphicon {
+  font-size: 6em;
+}
+
+.front-icons {
+  margin-top: 10em;
 }
 
 // Footer
 #footer {
-  margin-top: 50px;
+  margin-top: 10em;;
   padding-top: 20px;
   min-height: 100px;
   background-color: #16a085;
