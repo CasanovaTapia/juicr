@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #1abc9c;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.brand-small {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #1abc9c;
+}
+
+a, a:hover, a:visited, a:link, a:active {
+  color: #1abc9c;
+}
+
+.navbar-toggle {
+  background-color: #1abc9c;
+}
+
+.headline {
+  margin-top: -20px;
+  background-color: #555;
+  color: #fff;
+  width: 100%;
+  min-height: 350px;
+}
