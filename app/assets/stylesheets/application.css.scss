@@ -10,6 +10,7 @@ body {
 
 p {
   font-size: 16px;
+  color: #565a5c;
 }
 
 .brand {
@@ -28,6 +29,7 @@ p {
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+// Navbar
 a, a:hover, a:visited, a:link, a:active {
   color: #1abc9c;
 }
@@ -36,9 +38,13 @@ a, a:hover, a:visited, a:link, a:active {
   background-color: #1abc9c;
 }
 
+#user-greeting {
+  margin: 15px 10px;
+}
+
 .btn {
   margin-top: 20px;
-  border: none;
+  border: none!important;
   width: 100px;
 }
 
@@ -97,7 +103,6 @@ a, a:hover, a:visited, a:link, a:active {
 }
 
 // Devise forms
-//
 .divider {
     width: 100%;
     text-align: center;
