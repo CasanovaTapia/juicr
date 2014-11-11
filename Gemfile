@@ -29,3 +29,4 @@ gem 'figaro'
 gem 'omniauth-facebook'
 gem 'faker'
 gem 'whenever', :require => false
+gem 'pundit'
