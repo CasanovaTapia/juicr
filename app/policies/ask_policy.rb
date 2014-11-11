@@ -1,4 +1,9 @@
 class AskPolicy < ApplicationPolicy
+  def index?
+    true
+  end
+
+  
   class Scope < Scope
     def resolve
       scope

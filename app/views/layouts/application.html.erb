@@ -26,13 +26,15 @@
               <ul class="nav navbar-nav">
                 <% if current_user %>
                   <li id="user-greeting">Hello <%= current_user.first_name %>!</li>
-                  <li class="active"><%= link_to "Ask", asks_path %></li>
+                <% end %>
+                <li class="active brand-small"><%= link_to "ask.", asks_path %></li>
+                <li><%= link_to "About", static_about_path %></li>
+                <li><%= link_to "Help", static_help_path %></li>
+                <% if current_user %>
                   <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                 <% else %>
                   <li><%= link_to "Sign up", new_user_registration_path %></li>
                   <li><%= link_to "Log in", new_user_session_path %></li>
-                  <li><%= link_to "About", static_about_path %></li>
-                  <li><%= link_to "Help", static_help_path %></li>
                 <% end %>
               </ul>
             </div>

@@ -3,22 +3,28 @@ class AsksController < ApplicationController
 
   def index
     @asks = Ask.all
+    authorize @asks
   end
 
   def show
+    authorize @ask
   end
 
   def new
     @ask = Ask.new
     @categories = Category.all
+    authorize @ask
   end
 
   def edit
+    authorize @ask
   end
 
   def create
     @ask = Ask.new(ask_params)
     @ask.user = current_user
+
+    authorize @ask
     if @ask.save
       flash[:notice] = "Your Ask was successfully posted."
       redirect_to @ask
@@ -31,6 +37,7 @@ class AsksController < ApplicationController
   def update
     @ask.update(ask_params)
 
+    authorize @ask
     if @ask.update_attributes(ask_params)
       flash[:notice] = "Your Ask was successfully updated."
       redirect_to @ask
@@ -41,6 +48,7 @@ class AsksController < ApplicationController
   end
 
   def destroy
+    authorize @ask
     if @ask.destroy
       flash[:notice] = "Your Ask was successfully deleted."
       redirect_to asks_path
