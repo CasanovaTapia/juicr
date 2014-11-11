@@ -1,7 +1,7 @@
 - if policy(@ask).show?
-  .container
+  .container#ask
     .row
-      .col-md-6.col-md-offset-3
+      .col-md-8.col-md-offset-2
         %p
           %b.brand-small project name.
           = @ask.project_name
@@ -27,4 +27,5 @@
           = "asked by #{@ask.user.first_name} #{time_ago_in_words(@ask.created_at)} ago"
           = ", and updated #{time_ago_in_words(@ask.updated_at)} ago" if @ask.created_at != @ask.updated_at
 
-        = link_to 'Edit', edit_ask_path(@ask)
+        - if policy(@ask).edit?
+          = link_to 'Edit', edit_ask_path(@ask)

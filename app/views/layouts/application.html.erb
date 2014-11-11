@@ -28,6 +28,18 @@
                   <li id="user-greeting">Hello <%= current_user.first_name %>!</li>
                 <% end %>
                 <li class="active brand-small"><%= link_to "ask.", asks_path %></li>
+                <li role="presentation" class="dropdown" id="dropdown">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      industry.<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <% Category.all.each do |category| %>
+                        <li role="presentation"><%= link_to category.name, category %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </li>
                 <li><%= link_to "About", static_about_path %></li>
                 <li><%= link_to "Help", static_help_path %></li>
                 <% if current_user %>
@@ -61,20 +73,22 @@
     </div>
   <% end %>
 
-  <div class="container-fluid">
+  <!-- Main content -->
+  <div id="content" class="container-fluid">
     <%= yield %>
   </div>
 
-  <div class="container" id="footer">
+  <!-- Footer -->
+  <div id="footer">
     <div class="row">
       <div class="col-md-4 col-md-offset-1 pull-left">
-        <%= link_to "About", static_about_path, class: 'footer-item' %>
-        <%= link_to "Stories", "#", class: 'footer-item' %>
-        <%= link_to "Help", static_help_path, class: 'footer-item' %>
+        <%= link_to "about", static_about_path, class: 'footer-item' %>
+        <%= link_to "stories", "#", class: 'footer-item' %>
+        <%= link_to "help", static_help_path, class: 'footer-item' %>
       </div>
       <div class="col-md-4 col-md-offset-1 pull-right">
-        <%= link_to "Policies", "#", class: 'footer-item' %>
-        <%= link_to "Terms & Privacy", "#", class: 'footer-item' %>
+        <%= link_to "policies", "#", class: 'footer-item' %>
+        <%= link_to "terms & privacy", "#", class: 'footer-item' %>
       </div>
     </div>
     <div class="container text-center end-footer">
