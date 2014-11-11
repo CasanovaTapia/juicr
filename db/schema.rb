@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107104037) do
+ActiveRecord::Schema.define(version: 20141111054756) do
+
+  create_table "asks", force: true do |t|
+    t.string   "project_name"
+    t.text     "project_description"
+    t.text     "skills"
+    t.string   "time_commitment"
+    t.string   "location"
+    t.text     "expectations"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "asks", ["category_id"], name: "index_asks_on_category_id"
+  add_index "asks", ["user_id"], name: "index_asks_on_user_id"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

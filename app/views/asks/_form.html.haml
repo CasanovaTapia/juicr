@@ -1,0 +1,32 @@
+= form_for @ask do |f|
+  - if @ask.errors.any?
+    #error_explanation
+      %h2= "Ask was not saved, there are #{pluralize(@ask.errors.count, "error")}."
+      %ul
+        - @ask.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    .col-md-4.col-md-offset-4
+      .form-group
+        = f.label :project_name
+        = f.text_field :project_name, class: 'form-control'
+      .form-group
+        = f.label :industry
+        = f.select :category_id, options_from_collection_for_select(Category.all, "id", "name")
+      .form-group
+        = f.label :project_description
+        = f.text_area :project_description, class: 'form-control', rows: '5', placeholder: 'Pitch your project! Why would I want to be part of it? What is your vision?'
+      .form-group
+        = f.label :skills
+        = f.text_area :skills, class: 'form-control', rows: '5', placeholder: 'Set your expectations, but be realistic.'
+      .form-group
+        = f.label :time_commitment
+        = f.text_field :time_commitment, class: 'form-control'
+      .form-group
+        = f.label :location
+        = f.text_field :location, class: 'form-control'
+      .form-group
+        = f.label :other_details_and_expectations
+        = f.text_area :expectations, class: 'form-control', rows: '5', placeholder: 'Anything else we should know?'
+      .form-group
+        = f.submit 'Save', class: 'btn btn-success'

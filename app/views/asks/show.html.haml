@@ -1,0 +1,31 @@
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      %p= "asked by #{@ask.user.first_name}"
+
+      %p
+        %b Project:
+        = @ask.project_name
+      %p
+        %b Industry:
+        = @ask.category.name
+      %p
+        %b Project description:
+        = @ask.project_description
+      %p
+        %b Skills we're looking for:
+        = @ask.skills
+      %p
+        %b Time commitment:
+        = @ask.time_commitment
+      %p
+        %b Location:
+        = @ask.location
+      %p
+        %b Other details and expectations:
+        = @ask.expectations
+      %p
+        = "posted #{time_ago_in_words(@ask.created_at)} ago"
+        = " and updated #{time_ago_in_words(@ask.updated_at)} ago" if @ask.created_at != @ask.updated_at
+
+      = link_to 'Edit', edit_ask_path(@ask)
