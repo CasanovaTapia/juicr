@@ -21,13 +21,16 @@ user = User.new(
 )
 user.save!
 
-# Create Categories
-8.times do
-  category = Category.new(
-    name: Faker::Commerce.color
-  )
-  category.save!
-end
+# Categories
+Category.create!(name: "fine arts")
+Category.create!(name: "performing arts")
+Category.create!(name: "digital media")
+Category.create!(name: "communication")
+Category.create!(name: "entertainment")
+Category.create!(name: "architecture")
+Category.create!(name: "interior design")
+Category.create!(name: "product/industrial design")
+Category.create!(name: "fashion")
 categories = Category.all
 
 # Create Asks

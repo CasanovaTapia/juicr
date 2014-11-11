@@ -1,0 +1,13 @@
+%h1.text-center.brand= "#{@category.name}."
+- @category.asks.each do |ask|
+  .container
+    .row.index
+      .col-md-2
+        .small= "#{time_ago_in_words(ask.created_at)} ago"
+      .col-md-4
+        %b.dark-link= link_to ask.project_name, ask
+      .col-md-4
+        = ask.location
+      .col-md-2
+        .small= link_to 'Edit', edit_ask_path(ask)
+        .small= link_to 'Destroy', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }

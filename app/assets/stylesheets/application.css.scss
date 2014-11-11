@@ -13,10 +13,17 @@ p {
   color: #565a5c;
 }
 
-.brand {
+// Brand
+.brand-head {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #fff;
+}
+
+.brand  {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #565a5c;
 }
 
 .brand-small {
@@ -122,4 +129,31 @@ a, a:hover, a:visited, a:link, a:active {
 
 .divider-right {
     float: right;
+}
+
+// Index
+.index {
+  height: 2.5em;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+// Color and font style
+a, a:visited, a:link, a:active {
+  color: #1abc9c;
+}
+
+a:hover {
+  color: #999;
+  text-decoration: none;
+}
+
+.dark-link {
+  a, a:visited, a:link, a:active {
+    color: #16a085;
+  }
+  a:hover {
+    color: #999;
+    text-decoration: none;
+  }
 }

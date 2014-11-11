@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:new, :create, :destroy]
+  resources :categories
   resources :asks
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

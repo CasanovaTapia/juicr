@@ -1,15 +1,17 @@
 .container.text-center
-  %h1 Join a project
-  = link_to 'Post your Ask', new_ask_path
+  %h1.brand find a project.
+  %h3.brand-small= link_to 'or ask.', new_ask_path
 .container#ask-index
   - @asks.each do |ask|
-    .row
-      .col-md-2
-        = "#{time_ago_in_words(ask.created_at)} ago"
-      .col-md-6
-        = link_to ask.project_name, ask
-      .col-md-2
-        = ask.category.name
-      .col-md-2
-        = link_to 'Edit', edit_ask_path(ask)
-        = link_to 'Destroy', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .row.index
+      .col-lg-2
+        .small= "#{time_ago_in_words(ask.created_at)} ago"
+      .col-lg-4
+        %b.dark-link= link_to ask.project_name, ask
+      .col-lg-3
+        .dark-link= link_to ask.category.name, ask.category
+      .col-lg-2
+        = ask.location
+      .col-lg-1
+        .small= link_to 'Edit', edit_ask_path(ask)
+        .small= link_to 'Delete', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }
