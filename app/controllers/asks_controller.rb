@@ -2,7 +2,11 @@ class AsksController < ApplicationController
   before_action :set_ask, only: [:show, :edit, :update, :destroy]
 
   def index
-    @asks = Ask.all
+    if params [:query].present?
+      @asks = Ask.search(params[:query])
+    else
+      @asks = Ask.all
+    end
     authorize @asks
   end
 

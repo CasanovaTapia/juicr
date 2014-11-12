@@ -2,6 +2,12 @@
   %h1.brand find a project.
   - if policy(@asks).new?
     %h3.brand-small= link_to 'or ask.', new_ask_path
+  = form_tag asks_path, class: "form-inline", method: :get do
+    .form-group
+      = text_field_tag :query, params[:query], class: "form-control"
+    = submit_tag "Search", class: "btn btn-primary"
+    - if params[:query].present?
+      = link_to "clear", books_path
 .container#ask-index
   - @asks.each do |ask|
     .row.index
