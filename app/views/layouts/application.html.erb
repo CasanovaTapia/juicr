@@ -22,16 +22,17 @@
               </button>
               <%= link_to "Juicr", root_path, class: 'navbar-brand brand-small' %>
             </div>
-            <div id="navbar" class="navbar-collapse collapse pull-right">
+            <div class="navbar-collapse collapse pull-right">
               <ul class="nav navbar-nav">
                 <% if current_user %>
                   <li id="user-greeting">Hello <%= current_user.first_name %>!</li>
                 <% end %>
                 <li class="active brand-small"><%= link_to "ask.", asks_path %></li>
+                <li class="active brand-small"><%= link_to "give.", "#" %></li>
                 <li role="presentation" class="dropdown" id="dropdown">
                   <div class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      industry.<span class="caret"></span>
+                      ask by industry<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                       <% Category.all.each do |category| %>
@@ -40,6 +41,18 @@
                     </ul>
                   </div>
                 </li>
+                <!-- <li role="presentation" class="dropdown" id="dropdown">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      give by industry<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <% Category.all.each do |category| %>
+                        <li role="presentation"><%= link_to category.name, category %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </li> -->
                 <li><%= link_to "About", static_about_path %></li>
                 <li><%= link_to "Help", static_help_path %></li>
                 <% if current_user %>
