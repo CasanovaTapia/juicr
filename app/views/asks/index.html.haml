@@ -1,9 +1,14 @@
 .container.text-center
   %h1.brand find a project.
-  - if policy(@asks).new?
-    %h3.brand-small= link_to 'or ask.', new_ask_path
   .row
     .col-md-4
+      .dropdown
+        %a.brand-small.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %h3 ask by industry.
+        %ul.dropdown-menu{:role => "menu"}
+          - Category.all.each do |category|
+            %li{:role => "presentation"}= link_to category.name, category
+    .col-md-4#search-form
       = form_tag asks_path, class: "form-inline", method: :get do
         .form-group
           = text_field_tag :query, params[:query], class: "form-control"
@@ -11,13 +16,8 @@
         - if params[:query].present?
           = link_to "clear", asks_path
     .col-md-4
-      .dropdown
-        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-          ask by industry
-          %span.caret
-        %ul.dropdown-menu{:role => "menu"}
-          - Category.all.each do |category|
-            %li{:role => "presentation"}= link_to category.name, category
+      - if policy(@asks).new?
+        %h3.brand-small= link_to 'or ask.', new_ask_path
 .container#ask-index
   - @asks.each do |ask|
     .row.index
