@@ -1,14 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Lobster:400);
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 body {
   font-family: 'Lato';
-}
-
-p {
   font-size: 16px;
   color: #565a5c;
 }
@@ -28,11 +24,11 @@ p {
 
 // Navbar
 a, a:hover, a:visited, a:link, a:active {
-  color: #1abc9c;
+  color: #16a085;
 }
 
 .navbar-toggle {
-  background-color: #1abc9c;
+  background-color: #16a085;
 }
 
 #user-greeting {
@@ -44,6 +40,16 @@ a, a:hover, a:visited, a:link, a:active {
 .btn {
   border: none!important;
   width: 150px;
+}
+
+.btn-primary {
+  background-color: #999;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #16a085;
+  color: #fff;
 }
 
 .btn-give {
@@ -58,15 +64,7 @@ a, a:hover, a:visited, a:link, a:active {
   margin-bottom: 20px;
 }
 
-.btn-primary {
-  background-color: #999;
-  color: #fff;
-}
 
-.btn-success {
-  background-color: #1abc9c;
-  color: #fff;
-}
 
 #dropdown {
   margin-top: 15px;
@@ -118,35 +116,8 @@ a, a:hover, a:visited, a:link, a:active {
   margin: 20px;
 }
 
-#credit {
-  font-family: 'Lobster';
-  font-size: 18px;
-  color: #565a5c;
-}
-
 .end-footer {
   margin-top: 15px;
-}
-
-// Devise forms
-.divider {
-    width: 100%;
-    text-align: center;
-    margin: 20px;
-}
-
-.divider hr {
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-}
-
-.divider-left {
-    float: left;
-}
-
-.divider-right {
-    float: right;
 }
 
 // Index
@@ -158,28 +129,18 @@ a, a:hover, a:visited, a:link, a:active {
 
 // Color and font style
 a, a:visited, a:link, a:active {
-  color: #1abc9c;
+  color: #16a085;
+  text-decoration: none;
 }
-
 a:hover {
   color: #999;
   text-decoration: none;
 }
 
-// Link colors
-.dark-link {
-  a, a:visited, a:link, a:active {
-    color: #16a085;
-  }
-  a:hover {
-    color: #999;
-    text-decoration: none;
-  }
-}
-
 .gray-link {
   a, a:visited, a:link, a:active {
     color: #555;
+    text-decoration: none;
   }
   a:hover {
     color: #16a085;
@@ -203,7 +164,7 @@ a:hover {
 .brand-small {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  color: #1abc9c;
+  color: #16a085;
 }
 
 .brand-secondary {

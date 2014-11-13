@@ -3,12 +3,17 @@
   - @category.asks.each do |ask|
     .container
       .row.index
-        .col-md-2
+        .col-md-2.col-md-offset-1
           .small= "#{time_ago_in_words(ask.created_at)} ago"
         .col-md-4
           %b.dark-link= link_to ask.project_name, ask
-        .col-md-4
+          %p.small= "by #{ask.user.first_name}"
+        .col-md-3
           = ask.location
-        .col-md-2
-          .small= link_to 'Edit', edit_ask_path(ask)
-          .small= link_to 'Destroy', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        .col-md-1
+          - if policy(ask).edit?
+            .small= link_to 'Edit', edit_ask_path(ask)
+            .small= link_to 'Destroy', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          - else
+            - if current_user
+              = link_to 'give.', ask, class: 'btn btn-give'
