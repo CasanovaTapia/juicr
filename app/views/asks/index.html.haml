@@ -1,10 +1,10 @@
-.container.text-center
-  %h1.brand find a project.
+.container.intro-headline.text-center
+  %h1.brand-head.text-shadow join a project.
   .row
     .col-md-4
       .dropdown
         %a.brand-small.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-          %h3 ask by industry.
+          %h3 find by industry.
         %ul.dropdown-menu{:role => "menu"}
           - Category.all.each do |category|
             %li{:role => "presentation"}= link_to category.name, category
@@ -12,7 +12,7 @@
       = form_tag asks_path, class: "form-inline", method: :get do
         .form-group
           = text_field_tag :query, params[:query], class: "form-control"
-        = submit_tag "Search", class: "btn btn-primary"
+        = submit_tag "Search", class: "btn btn-default"
         - if params[:query].present?
           = link_to "clear", asks_path
     .col-md-4
@@ -25,8 +25,9 @@
         .small= "#{time_ago_in_words(ask.created_at)} ago"
       .col-lg-4
         %b.dark-link= link_to ask.project_name, ask
+        %p.small= "asked by #{ask.user.first_name}"
       .col-lg-3
-        .dark-link= link_to ask.category.name, ask.category
+        .gray-link= link_to ask.category.name, ask.category
       .col-lg-2
         = ask.location
       .col-lg-1

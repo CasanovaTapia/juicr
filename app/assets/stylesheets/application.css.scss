@@ -69,6 +69,11 @@ a, a:hover, a:visited, a:link, a:active {
   color: #fff;
 }
 
+.btn-success {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
 #dropdown {
   margin-top: 15px;
   font-size: 14px;
@@ -167,12 +172,23 @@ a:hover {
   text-decoration: none;
 }
 
+// Link colors
 .dark-link {
   a, a:visited, a:link, a:active {
     color: #16a085;
   }
   a:hover {
     color: #999;
+    text-decoration: none;
+  }
+}
+
+.gray-link {
+  a, a:visited, a:link, a:active {
+    color: #555;
+  }
+  a:hover {
+    color: #16a085;
     text-decoration: none;
   }
 }
