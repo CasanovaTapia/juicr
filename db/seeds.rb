@@ -40,7 +40,7 @@ categories = Category.all
     project_description:  Faker::Lorem.paragraph,
     category:             categories.sample,
     skills:               Faker::Lorem.sentence,
-    time_commitment:      Faker::Date.forward(30),
+    time_commitment:      (1 + rand(7)).to_s + " days",
     location:             Faker::Address.city,
     expectations:         Faker::Lorem.paragraph,
     user:                 users.sample,
@@ -50,7 +50,20 @@ categories = Category.all
 end
 asks = Ask.all
 
+# Create Offers
+200.times do
+  offer = Offer.new(
+    body:         Faker::Lorem.paragraph,
+    created_at:   Faker::Date.between(4.days.ago, Date.today),
+    user:         users.sample,
+    ask:          asks.sample
+  )
+  offer.save!
+end
+offers = Offer.all
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Category.count} categories created"
 puts "#{Ask.count} asks created"
+puts "#{Offer.count} offers created"
