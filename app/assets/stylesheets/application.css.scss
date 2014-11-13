@@ -17,28 +17,14 @@ p {
   margin-top: 10%;
 }
 
-// Brand
-.brand-head {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #fff;
+#give-form {
+  margin-top: 20px;
 }
 
-.brand  {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #565a5c;
+#give-index {
+  margin-top: 20px;
 }
 
-.brand-small {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  color: #1abc9c;
-}
-
-.text-shadow {
-  text-shadow: black 0.1em 0.1em 0.2em;
-}
 
 // Navbar
 a, a:hover, a:visited, a:link, a:active {
@@ -53,9 +39,17 @@ a, a:hover, a:visited, a:link, a:active {
   margin: 15px 10px;
 }
 
+
+// Buttons
 .btn {
   border: none!important;
   width: 150px;
+}
+
+.btn-give {
+  width: 75px;
+  background-color: #d35400;
+  color: #fff!important;
 }
 
 .btn-facebook {
@@ -191,4 +185,33 @@ a:hover {
     color: #16a085;
     text-decoration: none;
   }
+}
+
+// Brand
+.brand-head {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.brand  {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #565a5c;
+}
+
+.brand-small {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #1abc9c;
+}
+
+.brand-secondary {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #d35400!important;
+}
+
+.text-shadow {
+  text-shadow: black 0.1em 0.1em 0.2em;
 }

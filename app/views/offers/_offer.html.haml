@@ -1,0 +1,3 @@
+%p= offer.body
+- if offer.user
+  %p.small= "#{time_ago_in_words(offer.created_at)} ago by #{offer.user.first_name}"

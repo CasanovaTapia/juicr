@@ -26,6 +26,9 @@
         %p.small
           = "asked by #{@ask.user.first_name} #{time_ago_in_words(@ask.created_at)} ago"
           = ", and updated #{time_ago_in_words(@ask.updated_at)} ago" if @ask.created_at != @ask.updated_at
-
+        %p
+          - if current_user
+            = render 'offers/form'
+            = render partial: 'offers/offer', collection: @offers
         - if policy(@ask).edit?
-          = link_to 'Edit', edit_ask_path(@ask)
+          = link_to 'Edit your Ask', edit_ask_path(@ask)

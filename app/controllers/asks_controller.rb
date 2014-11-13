@@ -11,6 +11,8 @@ class AsksController < ApplicationController
   end
 
   def show
+    @offers = @ask.offers
+    @offer = @ask.offers.build
     authorize @ask
   end
 
