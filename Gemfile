@@ -31,3 +31,4 @@ gem 'faker'
 gem 'whenever', :require => false
 gem 'pundit'
 gem 'searchkick'
+gem 'newrelic_rpm'
