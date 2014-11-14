@@ -21,16 +21,16 @@
 .container#ask-index
   - @asks.each do |ask|
     .row.index
-      .col-lg-2
+      .col-sm-2
         .small= "#{time_ago_in_words(ask.created_at)} ago"
-      .col-lg-4
+      .col-sm-4
         %b= link_to ask.project_name, ask
         %p.small= "asked by #{ask.user.first_name}"
-      .col-lg-3
+      .col-sm-3
         .gray-link= link_to ask.category.name, ask.category
-      .col-lg-2
+      .col-sm-2
         = ask.location
-      .col-lg-1
+      .col-sm-1
         - if policy(ask).edit?
           .small= link_to 'Edit', edit_ask_path(ask)
           .small= link_to 'Delete', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }

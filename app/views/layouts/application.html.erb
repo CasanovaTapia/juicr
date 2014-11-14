@@ -9,54 +9,34 @@
 <body>
 
   <!-- NAVBAR -->
-  <div class="navbar-wrapper">
-    <div class="container">
-      <nav class="navbar navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <%= link_to "Juicr", root_path, class: 'navbar-brand brand-small' %>
-            </div>
-            <div class="navbar-collapse collapse pull-right">
-              <ul class="nav navbar-nav">
-                <% if current_user %>
-                  <li id="user-greeting">Hello <%= current_user.first_name %>!</li>
-                <% end %>
-                <li class="active"><%= link_to "ask.", asks_path, class: 'brand-secondary' %></li>
-                <li><%= link_to "give.", "#", class: 'brand-secondary' %></li>
-                <li role="presentation" class="dropdown" id="dropdown">
-
-                </li>
-                <!-- <li role="presentation" class="dropdown" id="dropdown">
-                  <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      give by industry<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                      <% Category.all.each do |category| %>
-                        <li role="presentation"><%= link_to category.name, category %></li>
-                      <% end %>
-                    </ul>
-                  </div>
-                </li> -->
-                <li><%= link_to "About", static_about_path %></li>
-                <li><%= link_to "Help", static_help_path %></li>
-                <% if current_user %>
-                  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-                <% else %>
-                  <li><%= link_to "Sign up", new_user_registration_path %></li>
-                  <li><%= link_to "Log in", new_user_session_path %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    </div>
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li role"presentation"><%= link_to "Juicr", root_path, class: 'navbar-brand brand-small' %></li>
+          <li role"presentation"><%= link_to "ask.", asks_path, class: 'brand-secondary' %></li>
+          <li role"presentation"><%= link_to "give.", "#", class: 'brand-secondary' %></li>
+        </ul>
+      </div>
+        <div class="pull-right" id="user-info">
+          <ul class="nav navbar-nav">
+            <% if current_user %>
+              <%= link_to "Hello #{current_user.first_name} !", edit_user_registration_path, class: 'nav-link' %>
+            <% end %>
+            <%= link_to "About", static_about_path, class: 'nav-link' %>
+            <%= link_to "Help", static_help_path, class: 'nav-link' %>
+            <% if current_user %>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-nav btn-sm' do %>
+                <span class="glyphicon glyphicon-log-out"></span>
+              <% end %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %>
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link' %>
+            <% end %>
+          </ul>
+        </div>
+      </ul>
+    </nav>
   </div>
 
   <!-- Flash messages  -->

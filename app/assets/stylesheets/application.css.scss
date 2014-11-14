@@ -21,21 +21,6 @@ body {
   margin-top: 20px;
 }
 
-
-// Navbar
-a, a:hover, a:visited, a:link, a:active {
-  color: #16a085;
-}
-
-.navbar-toggle {
-  background-color: #16a085;
-}
-
-#user-greeting {
-  margin: 15px 10px;
-}
-
-
 // Buttons
 .btn {
   border: none!important;
@@ -64,13 +49,30 @@ a, a:hover, a:visited, a:link, a:active {
   margin-bottom: 20px;
 }
 
-
-
-#dropdown {
-  margin-top: 15px;
-  font-size: 14px;
-  font-style: bold;
+.btn-nav {
+  width: 50px;
+  background-color: transparent;
+  color: #d35400!important;
 }
+
+// Navbar
+.navbar {
+  background-color: transparent;
+  border: none;
+}
+
+a, a:hover, a:visited, a:link, a:active {
+  color: #16a085;
+}
+
+#user-info {
+  margin: 15px 10px;
+}
+
+.nav-link {
+  margin-right: 10px;
+}
+
 
 // Home Page
 .intro-headline {
@@ -84,7 +86,7 @@ a, a:hover, a:visited, a:link, a:active {
   min-height: 180px;
 }
 
-.glyphicon {
+.glyphicon-front {
   font-size: 6em;
 }
 
@@ -95,6 +97,11 @@ a, a:hover, a:visited, a:link, a:active {
 // Asks Index
 #search-form {
   margin-top: 10px;
+}
+#dropdown {
+  margin-top: 15px;
+  font-size: 14px;
+  font-style: bold;
 }
 
 // Footer
@@ -122,9 +129,8 @@ a, a:hover, a:visited, a:link, a:active {
 
 // Index
 .index {
-  height: 2.5em;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 // Color and font style
@@ -164,7 +170,7 @@ a:hover {
 .brand-small {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  color: #16a085;
+  color: #16a085!important;
 }
 
 .brand-secondary {
