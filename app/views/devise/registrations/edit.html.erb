@@ -27,16 +27,6 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-
-        <div class="form-group">
-          <%= f.label :new_password %>
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "leave blank you're not changing it" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :new_password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: "re-enter your new password" %>
-        </div>
       </div>
 
       <div class="col-md-4 col-md-offset-1">
@@ -68,10 +58,6 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <div class="form-group">
-          <%= f.label :current_password %>
-          <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'enter current password to save changes' %>
-        </div>
         <div class="actions">
           <%= f.submit "Update", class: 'btn btn-success' %>
           <%= link_to "Cancel account", cancel_user_registration_path %>
