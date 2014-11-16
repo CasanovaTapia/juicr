@@ -1,3 +1,11 @@
-%p= offer.body
-- if offer.user
-  %p.small= "#{time_ago_in_words(offer.created_at)} ago by #{offer.user.first_name}"
+- if offer.body
+  .row
+    .col-md-2
+      - if policy(offer).update?
+        - if offer.accepted == true
+          %h3.brand-secondary accepted!
+        - else
+          %h3= link_to "accept.", [offer.ask, offer], :method => :put, class: 'brand-secondary'
+    .col-md-10
+      = offer.body
+      %p.small= "#{time_ago_in_words(offer.created_at)} ago by #{offer.user.first_name}"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113131845) do
+ActiveRecord::Schema.define(version: 20141116121057) do
 
   create_table "asks", force: true do |t|
     t.string   "project_name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141113131845) do
     t.integer  "ask_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "accepted",   default: false
   end
 
   add_index "offers", ["ask_id"], name: "index_offers_on_ask_id"

@@ -25,6 +25,20 @@ class OffersController < ApplicationController
     end
   end
 
+  def update
+    @offer = Offer.find(params[:id])
+    @ask = @offer.ask
+
+    authorize @offer
+    if @offer.update_attributes(:accepted => true)
+      flash[:notice] = "Offer was accepted!"
+      redirect_to @ask
+    else
+      flash[:error] = "Offer was not accepted. Please try again."
+      redirect_to @ask
+    end
+  end
+
   private
 
   def offer_params

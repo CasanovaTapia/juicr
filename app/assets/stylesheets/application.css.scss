@@ -55,6 +55,10 @@ body {
   color: #d35400!important;
 }
 
+.accept-btn {
+  margin-top: 10px;
+}
+
 // Navbar
 .navbar {
   background-color: transparent;
@@ -146,6 +150,17 @@ a:hover {
 .gray-link {
   a, a:visited, a:link, a:active {
     color: #555;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #16a085;
+    text-decoration: none;
+  }
+}
+
+.link-secondary {
+  a, a:visited, a:link, a:active {
+    color: #d35400!important;
     text-decoration: none;
   }
   a:hover {
