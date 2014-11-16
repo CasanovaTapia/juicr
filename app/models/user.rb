@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
       user.last_name = auth.info.last_name
     end
   end
+
+  def name
+    self.first_name + self.last_name
+  end
 end
