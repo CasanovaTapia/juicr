@@ -25,6 +25,12 @@ body {
   margin-top: -10px;
 }
 
+#faq {
+  p {
+    margin: -10px 0 25px 0;
+  }
+}
+
 // Buttons
 .btn {
   border: none!important;
@@ -106,6 +112,7 @@ a, a:hover, a:visited, a:link, a:active {
 #search-form {
   margin-top: 10px;
 }
+
 #dropdown {
   margin-top: 15px;
   font-size: 14px;

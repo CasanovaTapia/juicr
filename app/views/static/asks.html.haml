@@ -1,5 +1,9 @@
 - if current_user
-  %h1.text-center.brand-small my asks.
+  .text-center
+    %h1.brand-small my asks.
+    %p Asks are automatically deleted 14 days after submission
+    %p Once you accept an offer, a workroom will be created for you and your Giver for initial discussions
+
   .container#ask-index
     - @asks.each do |ask|
       .row.index
