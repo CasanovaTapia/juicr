@@ -22,6 +22,7 @@
           <ul class="nav navbar-nav">
             <% if current_user %>
               <%= link_to "Hello #{current_user.first_name} !", edit_user_registration_path, class: 'nav-link' %>
+              <%= link_to "My Asks", static_asks_path, class: 'nav-link' %>
             <% end %>
             <%= link_to "About", static_about_path, class: 'nav-link' %>
             <%= link_to "Help", static_help_path, class: 'nav-link' %>

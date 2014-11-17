@@ -6,4 +6,8 @@ class Ask < ActiveRecord::Base
   default_scope { order('created_at DESC') }
 
   searchkick
+
+  def has_accepted_offer?
+    self.offers.where(accepted: true).exists? == true
+  end
 end
