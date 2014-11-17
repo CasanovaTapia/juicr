@@ -2,7 +2,7 @@
   .row
     .col-md-2
       - if offer.accepted == true && policy(offer).project?
-        %h3= link_to "workroom.", ask_offer_workrooms_project_path(offer.ask, offer)
+        %h3= link_to "accepted!", ask_offer_workrooms_project_path(offer.ask, offer), class: 'brand-secondary'
       - else
         - if offer.any_accepted? && policy(offer).update?
           %h3= link_to "accept.", [offer.ask, offer], :method => :put, class: 'brand-secondary'
