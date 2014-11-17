@@ -1,11 +1,14 @@
 - if offer.body
   .row
     .col-md-2
-      - if offer.accepted == true
+      - if offer.accepted == true && policy(offer).project?
         %h3= link_to "workroom.", ask_offer_workrooms_project_path(offer.ask, offer)
       - else
-        - if offer.any_accepted?
+        - if offer.any_accepted? && policy(offer).update?
           %h3= link_to "accept.", [offer.ask, offer], :method => :put, class: 'brand-secondary'
     .col-md-10
       = offer.body
-      %p.small= "#{time_ago_in_words(offer.created_at)} ago by #{offer.user.first_name}"
+      %p.small
+        - if policy(offer).destroy?
+          = link_to "delete offer.", [offer.ask, offer], :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = "#{time_ago_in_words(offer.created_at)} ago by #{offer.user.first_name}"

@@ -4,6 +4,7 @@ class OffersController < ApplicationController
     @offer = @ask.offers.new(offer_params)
     @offer.user_id = current_user.id
 
+    authorize @offer
     if @offer.save
       flash[:notice] = "Your Give was successfully posted."
       redirect_to @ask
@@ -15,6 +16,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer = Offer.find(params[:id])
+    @ask = @offer.ask
 
     if @offer.destroy
       flash[:notice] = "Your Give was successfully deleted."
