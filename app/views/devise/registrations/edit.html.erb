@@ -4,10 +4,10 @@
     <%= devise_error_messages! %>
     <div class="row">
       <div class="col-md-3 col-md-offset-2">
-        <div class="form-group">
+        <!-- <div class="form-group">
           <%= f.label :username %><br />
           <%= f.text_field :username, autofocus: true, class: 'form-control' %>
-        </div>
+        </div> -->
 
         <div class="form-group">
           <%= f.label :first_name %><br />
@@ -30,7 +30,7 @@
 
         <div class="form-group">
           <%= f.label :new_password %>
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "leave blank you're not changing it" %>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: "leave blank if you're not changing it" %>
         </div>
 
         <div class="form-group">
