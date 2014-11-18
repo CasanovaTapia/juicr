@@ -3,7 +3,7 @@
   .container
     .row.index
       .col-md-1
-        = image_tag(user.profile) if user.avatar?
+        = image_tag(user.avatar_small) if user.avatar?
       .col-md-3
         = link_to user.name, user_path(user)
       .col-md-3
