@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   get 'static/help'
   get 'static/asks'
 
+  get 'users/show'
+  get 'users/index'
+
   root to: 'static#home'
 end

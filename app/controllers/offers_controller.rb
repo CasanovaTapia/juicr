@@ -1,4 +1,8 @@
 class OffersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
   def create
     @ask = Ask.find(params[:ask_id])
     @offer = @ask.offers.new(offer_params)

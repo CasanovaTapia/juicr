@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116121057) do
+ActiveRecord::Schema.define(version: 20141118003951) do
 
   create_table "asks", force: true do |t|
     t.string   "project_name"
@@ -72,8 +72,10 @@ ActiveRecord::Schema.define(version: 20141116121057) do
     t.text     "skill"
     t.text     "achievement"
     t.string   "portfolio"
+    t.integer  "category_id"
   end
 
+  add_index "users", ["category_id"], name: "index_users_on_category_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

@@ -41,6 +41,11 @@
 
       <div class="col-md-4 col-md-offset-1">
         <div class="form-group">
+          <%= f.label :industry %>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "name") %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :status %><br />
           <%= f.text_field :status, autofocus: true, class: 'form-control', placeholder: 'Your current professional status or role' %>
         </div>

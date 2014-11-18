@@ -1,26 +1,5 @@
 require 'faker'
 
-# Create Users
-5.times do
-  user = User.new(
-    first_name:       Faker::Name.first_name,
-    last_name:        Faker::Name.last_name,
-    email:            Faker::Internet.email,
-    password:         Faker::Lorem.characters(10)
-  )
-  user.save!
-end
-users = User.all
-
-# Admin User
-user = User.new(
-  first_name:       "Admin",
-  last_name:        "User",
-  email:            "admin@example.com",
-  password:         "helloworld"
-)
-user.save!
-
 # Categories
 Category.create!(name: "fine arts")
 Category.create!(name: "performing arts")
@@ -32,6 +11,39 @@ Category.create!(name: "interior design")
 Category.create!(name: "product/industrial design")
 Category.create!(name: "fashion")
 categories = Category.all
+
+# Create Users
+5.times do
+  user = User.new(
+    first_name:       Faker::Name.first_name,
+    last_name:        Faker::Name.last_name,
+    email:            Faker::Internet.email,
+    password:         Faker::Lorem.characters(10),
+    category_id:      categories.sample.id,
+    location:         Faker::Address.city,
+    skill:            Faker::Lorem.sentence,
+    status:           Faker::Name.title,
+    achievement:      Faker::Lorem.paragraph,
+    portfolio:        Faker::Internet.url,
+  )
+  user.save!
+end
+users = User.all
+
+# Admin User
+user = User.new(
+  first_name:       "Admin",
+  last_name:        "User",
+  email:            "admin@example.com",
+  password:         "helloworld",
+  location:         Faker::Address.city,
+  skill:            Faker::Lorem.sentence,
+  status:           Faker::Name.title,
+  achievement:      Faker::Lorem.paragraph,
+  portfolio:        Faker::Internet.url,
+  category_id:      categories.sample.id,
+)
+user.save!
 
 # Create Asks
 50.times do
