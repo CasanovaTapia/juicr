@@ -25,6 +25,7 @@ categories = Category.all
     status:           Faker::Name.title,
     achievement:      Faker::Lorem.paragraph,
     portfolio:        Faker::Internet.url,
+    avatar:           Faker::Avatar.image
   )
   user.save!
 end
@@ -42,6 +43,7 @@ user = User.new(
   achievement:      Faker::Lorem.paragraph,
   portfolio:        Faker::Internet.url,
   category_id:      categories.sample.id,
+  avatar:           Faker::Avatar.image
 )
 user.save!
 

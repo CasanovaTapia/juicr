@@ -12,10 +12,15 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
+      user.avatar = auth.info.image
     end
   end
 
   def name
     self.first_name + " " + self.last_name
+  end
+
+  def profile_photo
+    self.avatar.split("=")[0] << "=large"
   end
 end

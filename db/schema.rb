@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118003951) do
+ActiveRecord::Schema.define(version: 20141118010000) do
 
   create_table "asks", force: true do |t|
     t.string   "project_name"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20141118003951) do
     t.text     "achievement"
     t.string   "portfolio"
     t.integer  "category_id"
+    t.string   "avatar"
   end
 
   add_index "users", ["category_id"], name: "index_users_on_category_id"
