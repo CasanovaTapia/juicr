@@ -1,2 +1,41 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+.container#profile
+  .row
+    .col-md-8.col-md-offset-2
+      = image_tag(@user.profile) if @user.avatar?
+      %p
+        %b.brand-small name.
+        = @user.name
+      %p
+        %b.brand-small industry.
+        = @user.category.name if @user.category
+      %p
+        %b.brand-small current status.
+        = @user.status if @user.status
+      %p
+        %b.brand-small location.
+        = @user.location if @user.location
+      %p
+        %b.brand-small skills.
+        = @user.skill if @user.skill
+      %p
+        %b.brand-small achievements.
+        = @user.achievement if @user.achievement
+      %p
+        %b.brand-small portfolio.
+        = @user.portfolio if @user.portfolio
+      - if policy(@user).edit?
+        = link_to "Edit profile", edit_user_registration_path, class: 'btn btn-success'
+  .row
+    .col-md-5.col-md-offset-1
+      %h3.brand-secondary= "#{@user.asks.count} asks."
+      - @user.asks.each do |ask|
+        %p
+          = link_to ask.project_name, ask
+          = " - #{time_ago_in_words(ask.created_at)} ago"
+
+    .col-md-5.col-md-offset-1
+      %h3.brand-secondary= "#{@user.offers.count} offers, #{@user.offers.where(accepted: true).count} accepted."
+      - @user.offers.each do |offer|
+        %p
+          = link_to offer.ask.project_name, offer.ask
+          = " - #{time_ago_in_words(offer.created_at)} ago"

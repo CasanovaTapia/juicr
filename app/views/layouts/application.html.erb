@@ -15,13 +15,13 @@
         <ul class="nav navbar-nav">
           <li role"presentation"><%= link_to "Juicr", root_path, class: 'navbar-brand brand-small' %></li>
           <li role"presentation"><%= link_to "ask.", asks_path, class: 'brand-secondary' %></li>
-          <li role"presentation"><%= link_to "give.", users_index_path, class: 'brand-secondary' %></li>
+          <li role"presentation"><%= link_to "give.", users_path, class: 'brand-secondary' %></li>
         </ul>
       </div>
         <div class="pull-right" id="user-info">
           <ul class="nav navbar-nav">
             <% if current_user %>
-              <%= link_to "Hello #{current_user.first_name} !", edit_user_registration_path, class: 'nav-link' %>
+              <%= link_to "Hello #{current_user.first_name} !", user_path(current_user), class: 'nav-link' %>
               <%= link_to "My Asks", static_asks_path, class: 'nav-link' %>
             <% end %>
             <%= link_to "About", static_about_path, class: 'nav-link' %>

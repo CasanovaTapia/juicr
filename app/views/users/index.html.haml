@@ -14,7 +14,7 @@
       .col-md-1
         = image_tag(user.profile) if user.avatar?
       .col-md-3
-        = user.name
+        = link_to user.name, user_path(user)
       .col-md-3
         = user.status
       .col-md-3
