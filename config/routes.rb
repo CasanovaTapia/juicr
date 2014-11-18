@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  default_url_options :host => "example.com"
+  
   resources :categories
 
   resources :categories, only: [:show] do
     get :users
   end
-  
+
   resources :asks do
     resources :offers, only: [:create, :destroy, :update] do
       get 'workrooms/project'

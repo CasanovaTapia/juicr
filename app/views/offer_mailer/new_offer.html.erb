@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>New offer for "<%= @ask.project_name %>"</h1>
+    <small>
+      by: <%= @offer.user.name %>
+    </small>
+    <p>
+      <%= @offer.body %>
+    </p>
+    <p>
+      <%= link_to "view your ask", ask_url(@ask) %>
+    </p>
+  </body>
+</html>
