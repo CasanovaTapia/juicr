@@ -53,7 +53,7 @@ user.save!
     project_name:         Faker::Company.name,
     project_description:  Faker::Lorem.paragraph,
     category:             categories.sample,
-    skills:               Faker::Lorem.sentence,
+    skills:                Faker::Lorem.sentence,
     time_commitment:      (1 + rand(7)).to_s + " days",
     location:             Faker::Address.city,
     expectations:         Faker::Lorem.paragraph,

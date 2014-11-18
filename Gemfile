@@ -11,6 +11,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'autoprefixer-rails'
 
+group :test do
+  gem 'rspec-rails', '3.1.0'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
