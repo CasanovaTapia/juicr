@@ -1,25 +1,31 @@
-- if current_user
-  .text-center
-    %h1.brand-small my asks.
-    %p Asks are automatically deleted 14 days after submission
-    %p Once you accept an offer, a workroom will be created for you and your Giver for initial discussions
+.container.intro-headline.text-center
+  %h1.brand-head.text-shadow my asks.
+  .row
+    .col-md-4
+      %h3.brand-small= link_to 'workrooms.', '#'
+    .col-md-4
+      %p asks are automatically deleted 14 days after submission
+      %p workrooms are created when you approve a give
+    .col-md-4
+      - if policy(@asks).new?
+        %h3.brand-small= link_to 'new ask.', new_ask_path
 
-  .container#ask-index
-    - @asks.each do |ask|
-      .row.index
-        .col-sm-2
-          .small= "#{time_ago_in_words(ask.created_at)} ago"
-        .col-sm-4
-          %b= link_to ask.project_name, ask
-        .col-sm-3
-          .gray-link= link_to ask.category.name, ask.category
-        .col-sm-2
-          - if ask.has_accepted_offer?
-            = link_to "workroom.", ask_offer_workrooms_project_path(ask, ask.offers.where(accepted: true).first), class: 'brand-secondary'
-          - elsif ask.offers.count == 0
-            %p.small no offers yet
-          - else
-            %p.small.gray-link= link_to "pending offers", ask
-        .col-sm-1
-          .small= link_to 'Edit', edit_ask_path(ask)
-          .small= link_to 'Delete', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.container#ask-index
+  - @asks.each do |ask|
+    .row.index
+      .col-sm-2
+        .small= "#{time_ago_in_words(ask.created_at)} ago"
+      .col-sm-4
+        %b= link_to ask.project_name, ask
+      .col-sm-3
+        .gray-link= link_to ask.category.name, ask.category
+      .col-sm-2
+        - if ask.has_accepted_offer?
+          = link_to "workroom.", ask_offer_workrooms_project_path(ask, ask.offers.where(accepted: true).first), class: 'brand-secondary'
+        - elsif ask.offers.count == 0
+          %p.small no offers yet
+        - else
+          %p.small.gray-link= link_to "pending offers", ask
+      .col-sm-1
+        .small= link_to 'Edit', edit_ask_path(ask)
+        .small= link_to 'Delete', ask, :method => :delete, :data => { :confirm => 'Are you sure?' }
