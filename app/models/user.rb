@@ -20,12 +20,12 @@ class User < ActiveRecord::Base
     self.first_name + " " + self.last_name
   end
 
-  def profile
-    self.avatar.split("=")[0] << "=50x50"
+  def avatar_small
+    self.avatar.split("=")[0] << "?size=50x50"
   end
 
   def avatar_large
-    self.avatar.split("=")[0] << "=large"
+    self.avatar.split("=")[0] << "?=large"
   end
 
   def accepted_offers
