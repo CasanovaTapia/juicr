@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
   def profile_photo
     self.avatar.split("=")[0] << "=large"
   end
+
+  def profile
+    self.avatar.split("=")[0] << "=50x50"
+  end
 end

@@ -2,9 +2,23 @@
   %h1.brand-head.text-shadow juicrs.
   .row
     .col-md-4
-      .dropdown
-        %a.brand-small.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-          %h3 find by industry.
-        %ul.dropdown-menu{:role => "menu"}
-          - Category.all.each do |category|
-            %li{:role => "presentation"}= link_to category.name, categories_users_path(category)
+      -# .dropdown
+      -#   %a.brand-small.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      -#   -#   %h3 find by industry.
+      -#   -# %ul.dropdown-menu{:role => "menu"}
+      -#   -#   - Category.all.each do |category|
+      -#   -#     %li{:role => "presentation"}= link_to category.name, categories_users_path(category)
+.container#user-index
+  - @users.each do |user|
+    .row.index
+      .col-md-1
+        = image_tag(user.profile) if user.avatar?
+      .col-md-3
+        = user.name
+      .col-md-3
+        = user.status
+      .col-md-3
+        = user.category.name if user.category.present?
+      .col-md-2
+        %p.small= "#{user.asks.count} asks"
+        %p.small= "#{user.offers.count} offers, #{user.offers.where(accepted: true).count} accepted"
