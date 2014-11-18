@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   before_filter :authenticate_user!, only: [:asks]
-  
+
   def asks
     @asks = current_user.asks
   end

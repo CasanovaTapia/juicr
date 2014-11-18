@@ -1,1 +1,10 @@
-
+.container.intro-headline.text-center
+  %h1.brand-head.text-shadow juicrs.
+  .row
+    .col-md-4
+      .dropdown
+        %a.brand-small.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %h3 find by industry.
+        %ul.dropdown-menu{:role => "menu"}
+          - Category.all.each do |category|
+            %li{:role => "presentation"}= link_to category.name, categories_users_path(category)
