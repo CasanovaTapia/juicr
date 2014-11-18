@@ -10,4 +10,5 @@ class Ask < ActiveRecord::Base
   def has_accepted_offer?
     self.offers.where(accepted: true).exists? == true
   end
+
 end

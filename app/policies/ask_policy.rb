@@ -4,9 +4,8 @@ class AskPolicy < ApplicationPolicy
   end
 
   def create_offer?
-    record.user != user
+    record.user != user && record.offers.where(user_id: user.id).exists? == false
   end
-
 
   class Scope < Scope
     def resolve
