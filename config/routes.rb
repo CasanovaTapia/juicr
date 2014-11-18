@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :categories
 
+  resources :categories, only: [:show] do
+    get :users
+  end
+  
   resources :asks do
     resources :offers, only: [:create, :destroy, :update] do
       get 'workrooms/project'

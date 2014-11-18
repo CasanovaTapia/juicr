@@ -8,9 +8,9 @@
         %h3.brand-small= link_to category.name, category
         - if policy(category).destroy?
           .small= link_to 'Delete', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    -# .col-md-4.col-md-offset-1
-    -#   %h1.brand users by industry.
-    -#   - @categories.each do |category|
-    -#     %h3.brand-small= link_to category.name, category_cat_users_path(category)
-    -#     - if policy(category).destroy?
-    -#       .small= link_to 'Delete', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .col-md-4.col-md-offset-1
+      %h1.brand users by industry.
+      - @categories.each do |category|
+        %h3.brand-small= link_to category.name, category_users_path(category)
+        - if policy(category).destroy?
+          .small= link_to 'Delete', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
