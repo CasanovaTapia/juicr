@@ -1,7 +1,7 @@
 .container#profile
   .row
-    .col-md-8.col-md-offset-2
-      = image_tag(@user.profile) if @user.avatar?
+    .col-md-6.col-md-offset-3
+      = image_tag(@user.avatar) if @user.avatar?
       %p
         %b.brand-small name.
         = @user.name
@@ -34,8 +34,15 @@
           = " - #{time_ago_in_words(ask.created_at)} ago"
 
     .col-md-5.col-md-offset-1
-      %h3.brand-secondary= "#{@user.offers.count} offers, #{@user.offers.where(accepted: true).count} accepted."
-      - @user.offers.each do |offer|
+      %h3.brand-secondary= "#{@user.accepted_offers.count} accepted offers."
+      - @user.accepted_offers.each do |offer|
+        %p
+          = link_to offer.ask.project_name, offer.ask
+          - if policy(offer).project?
+            %p= link_to "workroom", ask_offer_workrooms_project_path(offer.ask, offer), class: 'brand-secondary'
+
+      %h3.brand-secondary= "#{@user.pending_offers.count} pending offers."
+      - @user.pending_offers.each do |offer|
         %p
           = link_to offer.ask.project_name, offer.ask
           = " - #{time_ago_in_words(offer.created_at)} ago"

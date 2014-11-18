@@ -20,11 +20,19 @@ class User < ActiveRecord::Base
     self.first_name + " " + self.last_name
   end
 
-  def profile_photo
+  def profile
+    self.avatar.split("=")[0] << "=50x50"
+  end
+
+  def avatar_large
     self.avatar.split("=")[0] << "=large"
   end
 
-  def profile
-    self.avatar.split("=")[0] << "=50x50"
+  def accepted_offers
+    self.offers.where(accepted: true)
+  end
+
+  def pending_offers
+    self.offers.where(accepted: false)
   end
 end

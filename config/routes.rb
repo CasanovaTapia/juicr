@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'static/about'
   get 'static/help'
   get 'static/asks'
+  get 'static/offers'
 
   resources :users, only: [:index, :show]
 
