@@ -16,12 +16,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 
   get 'static/home'
-  get 'static/about'
-  get 'static/help'
-  get 'static/asks'
-  get 'static/offers'
-  get 'static/terms'
-  get 'static/policy'
+  get 'about', to: 'static#about', as: :static_about
+  get 'help', to: 'static#help', as: :static_help
+  get 'asks', to: 'static#asks', as: :static_asks
+  get 'terms', to: 'static#terms', as: :static_terms
+  get 'privacy', to: 'static#policy', as: :static_policy
+  get 'stories', to: 'static#stories', as: :static_stories
 
   resources :users, only: [:index, :show]
 
