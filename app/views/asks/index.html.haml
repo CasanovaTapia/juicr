@@ -4,7 +4,7 @@
     .col-md-4
       .dropdown
         %a.brand-small.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-          %h3 find by industry.
+          %h3.text-shadow find by industry.
         %ul.dropdown-menu{:role => "menu"}
           - Category.all.each do |category|
             %li{:role => "presentation"}= link_to category.name, category
@@ -17,7 +17,7 @@
           = link_to "clear", asks_path
     .col-md-4
       - if policy(@asks).new?
-        %h3.brand-small= link_to 'or ask.', new_ask_path
+        %h3.text-shadow.brand-small= link_to 'or ask.', new_ask_path
 .container#ask-index
   - @asks.each do |ask|
     .row.index

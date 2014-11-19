@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'static/home'
   get 'about', to: 'static#about', as: :static_about
   get 'help', to: 'static#help', as: :static_help
-  get 'asks', to: 'static#asks', as: :static_asks
+  get 'myasks', to: 'static#asks', as: :static_asks
   get 'terms', to: 'static#terms', as: :static_terms
   get 'privacy', to: 'static#policy', as: :static_policy
   get 'stories', to: 'static#stories', as: :static_stories

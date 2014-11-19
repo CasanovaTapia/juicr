@@ -2,13 +2,13 @@
   %h1.brand-head.text-shadow my asks.
   .row
     .col-md-4
-      %h3.brand-small= link_to 'workrooms.', '#'
+      %h3.brand-small.text-shadow= link_to 'workrooms.', '#'
     .col-md-4
       %p asks are automatically deleted 14 days after submission
       %p workrooms are created when you approve a give
     .col-md-4
       - if policy(@asks).new?
-        %h3.brand-small= link_to 'new ask.', new_ask_path
+        %h3.brand-small.text-shadow= link_to 'new ask.', new_ask_path
 
 .container#ask-index
   - @asks.each do |ask|
