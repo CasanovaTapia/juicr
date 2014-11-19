@@ -1,5 +1,5 @@
 class OfferMailer < ActionMailer::Base
-  default from: "casanovatapia@gmail.com"
+  default from: "juicr.la@gmail.com"
 
   def new_offer(user, ask, offer)
 
