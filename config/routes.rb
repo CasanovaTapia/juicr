@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   default_url_options :host => "example.com"
-  
+
   resources :categories
 
   resources :categories, only: [:show] do
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'static/help'
   get 'static/asks'
   get 'static/offers'
+  get 'static/terms'
+  get 'static/policy'
 
   resources :users, only: [:index, :show]
 
