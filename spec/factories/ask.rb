@@ -6,5 +6,6 @@ FactoryGirl.define do
     f.time_commitment      "7 days"
     f.location             "test location"
     f.expectations         "test expectations"
+    user
   end
 end
