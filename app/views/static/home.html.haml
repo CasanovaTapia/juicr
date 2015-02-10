@@ -1,14 +1,21 @@
-.intro-headline.text-center
-  .container.front-head
-    %h1.brand-head.text-shadow Juicr
-    %p.brand-small.text-shadow#tag LOS ANGELES
-    %h2.brand-secondary.text-shadow ask. give. create.
-    %h2.text-shadow Join a project, or find friends to help with yours
-    - if current_user
-      = link_to "Learn more", static_help_path, class: 'btn btn-default btn-lg'
-    - else
-      = link_to "Sign up", new_user_registration_path, class: 'btn btn-default btn-lg'
-      = link_to "Log in", new_user_session_path, class: 'btn btn-default btn-lg'
+.row.intro-home
+  .col-md-7
+    = image_tag('juicr.jpg', width: '600')
+  .col-md-5
+    .text-center.front-head
+      %h1.brand-small Juicr
+      %h3.brand.tagline ask. give. create.
+      .home-button= link_to "Learn more", static_about_path, class: 'btn btn-success btn-large'
+  -# .container.front-head
+  -#   %h1.brand-head.text-shadow Juicr
+  -#   %p.brand-small.text-shadow#tag LOS ANGELES
+  -#   %h2.brand-secondary.text-shadow ask. give. create.
+  -#   %h2.text-shadow Join a project, or find friends to help with yours
+  -#   - if current_user
+  -#     = link_to "Learn more", static_help_path, class: 'btn btn-default btn-lg'
+  -#   - else
+  -#     = link_to "Sign up", new_user_registration_path, class: 'btn btn-default btn-lg'
+  -#     = link_to "Log in", new_user_session_path, class: 'btn btn-default btn-lg'
 .container.front-icons.text-center
   .row
     .col-md-4

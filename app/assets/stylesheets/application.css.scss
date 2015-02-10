@@ -92,8 +92,7 @@ a, a:hover, a:visited, a:link, a:active {
   margin-right: 10px;
 }
 
-
-// Home Page
+// Page header jumbotron
 .intro-headline {
   margin-top: -20px;
   padding-top: 50px;
@@ -103,6 +102,23 @@ a, a:hover, a:visited, a:link, a:active {
   color: #fff;
   width: 100%;
   min-height: 180px;
+}
+
+
+// Home Page
+.intro-home {
+  padding-top: 15%;
+  padding-bottom: 50px;
+  width: 100%;
+  min-height: 180px;
+}
+
+.tagline {
+  margin-top: -10px;
+}
+
+.home-button {
+  padding-top: 5%;
 }
 
 .glyphicon-front {
