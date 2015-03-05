@@ -1,0 +1,6 @@
+.row
+	.col-md-8.col-md-offset-2
+		= form_for [@offer.ask, @offer, @offer.messages.build] do |f|
+			.form-group
+				= f.text_area :body, class: 'form-control', rows: 3
+			= f.submit 'Submit', class: 'btn btn-success'

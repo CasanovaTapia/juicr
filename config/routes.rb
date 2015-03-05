@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :asks do
     resources :offers, only: [:create, :destroy, :update] do
+      resources :messages, only: [:create, :destroy, :update]
       get 'workrooms/project'
     end
   end

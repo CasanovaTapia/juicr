@@ -1,0 +1,6 @@
+.messages	
+	- if message.body
+		.row
+			.col-md-8.col-md-offset-2
+				%p= message.body
+				%small= "by #{message.user.name} on #{message.created_at.strftime("%b %e, %l:%M %p")}"

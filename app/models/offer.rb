@@ -1,6 +1,7 @@
 class Offer < ActiveRecord::Base
   belongs_to :user
   belongs_to :ask
+  has_many :messages, dependent: :destroy
 
   validates :body, presence: true
 
